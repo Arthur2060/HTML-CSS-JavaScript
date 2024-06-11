@@ -18,25 +18,43 @@
             margin-top: 10%;
             border: solid rgb(0, 35, 68) 5px;
             padding: 20px;
-            text-align: center;
-            justify-content: end;
         }
         .TextBox{
-            width: max-content;
+            width: 350px;
             border-radius: 20px;
             border: solid 3px rgb(48, 0, 48);
             transition: ease 0.2s;
             height: 25px;
-            margin-bottom: 5px;
+            margin-bottom: 25px;
             padding: 2px;
+        }
+        #Cadastro{
+            display: block;
+        }
+        #cadastro2{
+            background-color: rgb(48, 0, 48);
+            width: 20px;
         }
     </style>
 </head>
 <body>
     <div id="Container">
-        <input class="TextBox" type="text" placeholder="Nome">
-        <input class="TextBox" type="email" placeholder="E-mail">
-        <input class="TextBox" type="password" placeholder="Senha">
+        <form id="Cadastro">
+        <input class="TextBox" type="text" placeholder="Nome" id="nome">
+        <input class="TextBox" type="email" placeholder="E-mail (xxxxxxxxx@gmail.com)" id="email">
+        <input class="TextBox" type="password" placeholder="Senha" id="senha">
+        <input id="Nascimento" type="date">
+        <button id="FimCadastro">Clique aqui!</button>
+        </form>
+        <form id="Cadastro2">
+
+        </form>
     </div>
+    <script>
+        var nome = document.getElementById("#nome");
+        var email = document.getElementById("#email");
+        var senha = document.getElementById("#senha");
+        var fimcadastro = document.getElementById("#FimCadastro");
+    </script>
 </body>
 </html>
