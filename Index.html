@@ -17,19 +17,26 @@
             margin-left: 30%;
             margin-top: 10%;
             border: solid rgb(0, 35, 68) 5px;
+            padding: 20px;
+            text-align: center;
+            justify-content: end;
+        }
+        .TextBox{
+            width: max-content;
+            border-radius: 20px;
+            border: solid 3px rgb(48, 0, 48);
+            transition: ease 0.2s;
+            height: 25px;
+            margin-bottom: 5px;
+            padding: 2px;
         }
     </style>
 </head>
 <body>
-    <canvas id="Container">
-        
-    </canvas>
-    <script>
-        var canvas = document.getElementById("#Container");
-
-        function drawn(){
-            fill
-        }
-    </script>
+    <div id="Container">
+        <input class="TextBox" type="text" placeholder="Nome">
+        <input class="TextBox" type="email" placeholder="E-mail">
+        <input class="TextBox" type="password" placeholder="Senha">
+    </div>
 </body>
 </html>
