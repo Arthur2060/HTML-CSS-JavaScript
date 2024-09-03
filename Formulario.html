@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro/Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: black;
+            height: 30vh;
+            color: white;
+            align-items: center;
+        }
+
+        #subtexto {
+            color: rgb(0, 255, 221);
+            padding-top: 1vh;
+        }
+
+        #container {
+            display: block;
+            border-radius: 2vh;
+            width: 100vh;
+            background-color: #E6E6F0;
+            margin: auto;
+            z-index: 1;
+            margin-top: -10vh;
+            box-shadow: 0 0 10vh rgba(0, 0, 0, 0.5);
+            padding: 7vh;
+        }
+
+        .item {
+            margin-top: 5vh;
+        }
+
+        .caixadetexto {
+            width: 80vh;
+            height: 5vh;
+            border-radius: 1vh;
+            border: solid #d6d6d6 2px;
+            font-size: 2vh;
+            padding: 1vh;
+        }
+
+        #Textodecabecalho {
+            margin-left: 50vh;
+            padding-top: 5vh;
+        }
+
+        #textarea {
+            width: 80vh;
+            height: 10vh;
+            padding: 1vh;
+            border: solid #d6d6d6 2px;
+            border-radius: 1vh;
+            max-width: 80vh;
+        }
+
+        label {
+            font-size: smaller;
+            color: #929292;
+        }
+
+        #submit{
+            width: 20vh;
+            height: 10vh;
+            border-radius: 2vh;
+            border: solid #d6d6d6 2px;
+            background-color: white;
+            margin-top: 2vh;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="Textodecabecalho">
+            <h1>Crie e Compartilhe <br>seu evento</h1>
+            <h4 id="subtexto">O primeiro passo é preencher <br>
+                este formulario de inscrição</h4>
+        </div>
+    </header>
+    <div id="container">
+        <form id="Informacoesdoevento">
+            <div>
+                <h1>Informações do evento</h1>
+            </div>
+            <div id="titulo" class="item">
+                <h3>Titulo do evento</h3><label>(Minimo 8 caracteres)</label>
+                <input type="text" class="caixadetexto">
+            </div>
+            <div id="link" class="item">
+                <h3>Link do evento</h3><label>(Comece com "HTTPS://")</label>
+                <input type="text" class="caixadetexto">
+            </div>
+            <div id="whatsapp" class="item">
+                <h3>Whatsapp do evento</h3><label>(com DDD)</label>
+                <input type="number" class="caixadetexto">
+            </div>
+            <div id="info" class="item">
+                <h3>Mais informações</h3>
+                <textarea id="textarea"></textarea>
+            </div>
+            <div id="categoria" class="item">
+                <h3>Categoria</h3>
+                <select id="categoria" class="caixadetexto">
+                    <option>categoria 1</option>
+                    <option>categoria 2</option>
+                    <option>categoria 3</option>
+                </select>
+            </div>
+            <div>
+                <button id="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
