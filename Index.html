@@ -3,58 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titulo</title>
-    <style>
-        body{
-            background-color: rgb(0, 132, 255);
-        }
-        #Container{
-            background-color: white;
-            border-radius: 20px;
-            height: 400px;
-            width: 450px;
-            box-shadow: -10px 20px 20px rgba(0, 0, 0, 0.356);
-            margin-left: 30%;
-            margin-top: 10%;
-            border: solid rgb(0, 35, 68) 5px;
-            padding: 20px;
-        }
-        .TextBox{
-            width: 350px;
-            border-radius: 20px;
-            border: solid 3px rgb(48, 0, 48);
-            transition: ease 0.2s;
-            height: 25px;
-            margin-bottom: 25px;
-            padding: 2px;
-        }
-        #Cadastro{
-            display: block;
-        }
-        #cadastro2{
-            background-color: rgb(48, 0, 48);
-            width: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="Style.css">
+    <title>Medidas</title>
 </head>
 <body>
-    <div id="Container">
-        <form id="Cadastro">
-        <input class="TextBox" type="text" placeholder="Nome" id="nome">
-        <input class="TextBox" type="email" placeholder="E-mail (xxxxxxxxx@gmail.com)" id="email">
-        <input class="TextBox" type="password" placeholder="Senha" id="senha">
-        <input id="Nascimento" type="date">
-        <button id="FimCadastro">Clique aqui!</button>
-        </form>
-        <form id="Cadastro2">
-
-        </form>
-    </div>
-    <script>
-        var nome = document.getElementById("#nome");
-        var email = document.getElementById("#email");
-        var senha = document.getElementById("#senha");
-        var fimcadastro = document.getElementById("#FimCadastro");
-    </script>
+    <header>
+        <h1>Brincando com Medidas</h1>
+    </header>
+    <main>
+        <h2>Aqui esta exposta a palavra "medida" em diferentes medidas:</h2>
+        <p id="p1">Medida</p>
+        <p id="p2">Medida</p>
+        <p id="p3">Medida</p>
+        <br>
+        <p id="p4">Medida</p>
+        <p id="p5">Medida</p>
+        <p id="p6">Medida</p>
+        <br>
+        <div id="fundo">
+            <div id="processor">
+                <p></p>
+                <div id="core">
+                    <p>I9-6600 INTEL &copy;</p>
+                </div>
+            </div>
+        </div>
+        <p>Este processador foi "montado" com um jogo de divs proporções e borders</p>
+    </main>
 </body>
 </html>
