@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            background-color: rgb(0, 174, 255);
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        section {
+            display: absolute;
+            background-color: white;
+            width: fit-content;
+            height: fit-content;
+            border-radius: 2vh;
+            padding: 2vh;
+            margin-left: 5vh;
+            margin-right: 5vh;
+        }
+
+        #container {
+            display: flex;
+        }
+
+        .campo {
+            margin-top: 10%;
+        }
+
+        .textbox{
+            width: 95%;
+            border-radius: 1vh;
+            height: 2vh;
+            border: solid 1px black;
+            padding: 0.5vh;
+        }
+
+        #prox {
+            background-color: rgb(0, 174, 255);
+            color: white;
+            width: 10vh;
+            height: 5vh;
+            border-radius: 1vh;
+            border: none;
+            transition: 0.5s ease;
+            margin: 1vh;
+        }
+
+        #prox:hover {
+            width: 12vh;
+            height: 7vh;
+
+        }
+    </style>
+    <title>Wifi-Manager</title>
+</head>
+
+<body>
+    <div id="container">
+        <section>
+            <form>
+                <h1 id="titulo">Autenticação de rede</h1>
+
+                <div class="campo">
+                    <label id="ssid" class="label">
+                        <h3>SSID</h3>
+                    </label>
+                    <input type="text" placeholder="MeuWifi1" class="textbox">
+                </div>
+
+                <div class="campo">
+                    <label id="senha" class="label">
+                        <h3>Senha</h3>
+                    </label>
+                    <input type="text" placeholder="Senha123" class="textbox">
+                </div>
+
+                <button id="prox">PROXIMO</button>
+            </form>
+        </section>
+
+        <section>
+            <form>
+                <h1 id="titulo">Endereçamento</h1>
+
+                <div class="campo">
+                    <label id="IP" class="label">
+                        <h3>IP</h3>
+                    </label>
+                    <input type="number" placeholder="000.000.000.000" class="textbox">
+                </div>
+
+                <div class="campo">
+                    <label id="gateway" class="label">
+                        <h3>Gateway</h3>
+                    </label>
+                    <input type="number" placeholder="000.000.000.000" class="textbox">
+                </div>
+
+                <div class="campo">
+                    <label id="mascara" class="label">
+                        <h3>Máscara de sub-rede</h3>
+                    </label>
+                    <input type="number" placeholder="000.000.000.000" class="textbox">
+                </div>
+
+                <div class="campo">
+                    <label id="dinamico" class="label">
+                        <h3>IP dinâmico</h3>
+                    </label>
+                    <input type="radio" name="dinamico">
+                    
+                    <input type="radio" name="dinamico">
+                </div>
+
+
+                <button id="prox">PROXIMO</button>
+            </form>
+        </section>
+    </div>
+
+</body>
+
+</html>
