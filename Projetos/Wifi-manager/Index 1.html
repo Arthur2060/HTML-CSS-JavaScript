@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -20,8 +20,8 @@
         section {
             display: absolute;
             background-color: white;
-            width: fit-content;
-            height: fit-content;
+            width: max-content;
+            height: max-content;
             border-radius: 2vh;
             padding: 2vh;
             margin-left: 5vh;
@@ -36,7 +36,7 @@
             margin-top: 10%;
         }
 
-        .textbox{
+        .textbox {
             width: 95%;
             border-radius: 1vh;
             height: 2vh;
@@ -60,6 +60,14 @@
             height: 7vh;
 
         }
+
+        #modoop>ul {
+            list-style: none;
+        }
+
+        #modoop>ul>li {
+            margin-top: 2vh;
+        }
     </style>
     <title>Wifi-Manager</title>
 </head>
@@ -68,7 +76,7 @@
     <div id="container">
         <section>
             <form>
-                <h1 id="titulo">Autenticação de rede</h1>
+                <h1 class="titulo">Autenticação de rede</h1>
 
                 <div class="campo">
                     <label id="ssid" class="label">
@@ -90,7 +98,7 @@
 
         <section>
             <form>
-                <h1 id="titulo">Endereçamento</h1>
+                <h1 class="titulo">Endereçamento</h1>
 
                 <div class="campo">
                     <label id="IP" class="label">
@@ -117,13 +125,62 @@
                     <label id="dinamico" class="label">
                         <h3>IP dinâmico</h3>
                     </label>
+
+                    <label id="on">On</label>
                     <input type="radio" name="dinamico">
-                    
+
+                    <label id="off">Off</label>
                     <input type="radio" name="dinamico">
                 </div>
 
+                <button id="prox">PROXIMO</button>
+            </form>
+        </section>
+
+        <section id="operacao">
+            <form>
+                <h1 class="titulo">Modo de operação</h1>
+
+                <div class="campo" id="modoop">
+                    <ul>
+                        <li>
+                            <label id="cliente" class="label">Cliente MQTT</label>
+                            <input type="radio" name="op" id="1">
+                        </li>
+
+                        <li>
+                            <label id="servidor" class="label">Servidor HTTP</label>
+                            <input type="radio" name="op" id="2">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="campo">
+                    <label id="broker" class="label">
+                        <h3>Endereço do broker</h3>
+                    </label>
+                    <input type="number" id="broker" class="textbox" placeholder="000.000.000.000">
+                </div>
 
                 <button id="prox">PROXIMO</button>
+            </form>
+        </section>
+
+        <section id="banco">
+            <form>
+                <h1 class="titulo">Configuração do banco de dados</h1>
+
+                <div class="campo">
+                    <label class="label" id="combanco">
+                        <h3>Com banco de dados</h3>
+                    </label>
+                    
+                    <label>Sim</label>
+                    <input type="radio" name="combanco" id="on">
+
+                    <label>Não</label>
+                    <input type="radio" name="combanco" id="off">
+                </div>
             </form>
         </section>
     </div>
