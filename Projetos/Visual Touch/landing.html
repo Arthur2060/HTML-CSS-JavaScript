@@ -1,79 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre nós</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            border-radius: 0.5vh;
         }
 
-        section{
+        body {
+            background-color: #f2f2f2;
+        }
+
+        section {
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             background-color: #A691F2;
             text-align: center;
-            width: 75%;
+            width: 65%;
             margin: 2vh auto;
-            padding: 5vh;
             font-size: 20px;
+            padding: 2vh 0;
         }
 
-        header{
+        .caixa {
+            height: 40vh;
+            width: 50vh;
+            text-align: left;
+            background-color: white;
+            padding: 5vh;
+            margin: 0 2vh;
+        }
+
+        header {
             display: flex;
             justify-content: space-between;
             padding: 2vh;
-            
+            background-color: white;
         }
 
-        #topicos{
+        #topicos {
             display: flex;
             list-style: none;
-            
+
         }
 
-        .item{
+        .item {
             padding: 1vh 2vh;
         }
 
-        .item > a{
-            color:#85b4f2;
+        .item>a {
+            color: #85b4f2;
             text-decoration: none;
         }
-        
-        .item:hover, .item > a:hover{
+
+        .item:hover,
+        .item>a:hover {
+            transition: 0.5s ease;
             background-color: #85b4f2;
             border-radius: 2vh;
             color: white;
         }
+
+        #Secao3 {
+            text-align: left;
+        }
+        
+        #Secao3 > div > p{
+            margin: 2vh 2vh;
+        }
+
+        .caixa > img{
+            border: solid black 1px;
+        }
+
+        #logo{
+            border-radius: 3vh;
+        }
     </style>
 </head>
+
 <body>
     <header>
-        <img src="" id="logo">
+        <img src="LogoSite.png" id="logo" width="50vh">
 
         <nav>
             <ul id="topicos">
-                <li class="item"><a href=""><h5>Home</h5></a></li>
-                <li class="item"><a href=""><h5>Sobre nós</h5></a></li>
-                <li class="item"><a href=""><h5>Login</h5></a></li>
+                <li class="item"><a href="">
+                        <h5>Home</h5>
+                    </a></li>
+                <li class="item"><a href="">
+                        <h5>Sobre nós</h5>
+                    </a></li>
+                <li class="item"><a href="">
+                        <h5>Login</h5>
+                    </a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
+        <section style="flex-direction: column;">
             <h1>Você está em boa companhia</h1>
 
-            <p style="width: 70vh;">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Voluptatem provident beatae consectetur 
-            </p>
+            <h3 style="width: 100vh;">
+                Com os alunos do SENAI Vila Mariana! Nosso time é formado por alunos
+                dedicados, comprometidos e apaixonados pelo que fazem. Combinando
+                conhecimento técnico e vontade de aprender.
+            </h3>
 
             <div>
                 <img src="" alt="imagen">
@@ -88,27 +126,85 @@
 
         <section style="flex-direction: row;">
             <div>
-                <h1>Sobre a inclusão digital</h1>
-                <p style="width: 50vh; text-align: left;">Lorem ipsum dolor sit 
-                amet consectetur adipisicing elit.
-                 Odio, cupiditate dicta. Commodi veniam nulla incidunt 
-                 unde expedita, neque qui nam voluptates explicabo 
-                 necessitatibus quae ducimus doloremque laboriosam molestiae.
-                  Accusantium, voluptates. Lorem 
+                <h1 style="text-align: left; font-size: 30px; margin-bottom: 4vh;">Sobre a inclusão digital</h1>
+                <p style="width: 50vh; text-align: left; font-size: 30px;">
+                    Nosso projeto não apenas revoluciona
+                    a forma como interagimos com a
+                    tecnologia, mas também promove
+                    uma inclusão mais ampla e eficaz,
+                    permitindo que todos,
+                    independentemente de suas limitações fisicas ou circunstâncias,
+                    possam aproveitar ao maximo o mundo
+                    digital.
                 </p>
             </div>
-            
-            <div style="width: 50vh; text-align: left; background-color: white; padding: 2vh;">
-                <img src="" alt="">
+
+            <div class="caixa">
+                <img src="" alt="Imagen Aqui">
                 <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                     Non, facilis natus praesentium eveniet animi
+                    Non, facilis natus praesentium eveniet animi
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Facere ab, vel tempore quis, delectus rem culpa non ratione
-                     odio ad accusantium
+                    odio ad accusantium
                 </p>
             </div>
         </section>
+
+        <section style="flex-direction: row;">
+            <div class="caixa">
+                <img src="" alt="Imagen">
+                <h1>Texto para falar sobre as funcionalidades</h1>
+                <p style="width: 50vh; text-align: left;">Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit.
+                    Odio, cupiditate dicta. Commodi veniam nulla incidunt
+                    unde expedita, neque qui nam voluptates explicabo
+                    necessitatibus quae ducimus doloremque laboriosam molestiae.
+                    Accusantium, voluptates. Lorem
+                </p>
+            </div>
+
+            <div class="caixa">
+                <ul>
+                    <li>Controle do Cursor: Movimente o cursor
+                        do mouse apenas com o olhar.</li>
+                    <li>Cliques com o Olho: Realize cliques com
+                        um piscar de olho.</li>
+                    <li>Compatibilidade: Funciona com câmeras
+                        padrão e é compatível com a maioria dos</li>
+                </ul>
+                <img src="" alt="Tuturial passo a passo">
+            </div>
+        </section>
+
+        <section id="Secao3">
+            <div>
+                <p>
+                    Com essa combinação de ferramentas, oferecemos uma <br>
+                    experiência visualmente agradável
+                </p>
+                <p>
+                    Python - Lógica de programação <br>
+                    HTML e CSS - Estrutura e design visual <br>
+                    Flask - Desenvolvimento web <br>
+                    Visual Studio Code (VSCode) - Editor de código <br>
+                    Figma - Design de interfaces <br>
+                    Postman - Teste e validação de APIs REST <br>
+                    Git e GitHub - Controle de versão e colaboração <br>
+                </p>
+            </div>
+
+            <br>
+            <img src="Programas.png" alt="" width="500vh">
+        </section>
+
+        <section>
+            <h1 style="text-align: left; justify-self: flex-start;">Chamada para a ação já q o pitch vai ser <br>
+                comercial e não educacional</h1>
+
+            <img src="" alt="Imagen Aqui">
+        </section>
     </main>
 </body>
+
 </html>
