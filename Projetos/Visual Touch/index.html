@@ -13,6 +13,12 @@
 
         body{
             background-color: rgba(209, 129, 230, 0.644);
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer{
+            border-top: solid 1vh pink;
         }
 
         header, footer{
@@ -60,6 +66,18 @@
             height: 30vh;
             width: 40vh;
         }
+
+        #textoum{
+            margin: 2vh 0;
+        }
+        
+        #textoum > h1, #textoum > h3{
+            margin: 2vh 0;
+        }
+
+        #textodois{
+            margin: 2.4vh 0;
+        }
     </style>
 </head>
 <body>
@@ -95,10 +113,14 @@
             <button type="submit">Saiba mais</button>
         </form>
 
-        <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. At labore soluta
+        <p id="textodois">
+            <b>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At labore soluta
              asperiores cum aperiam accusantium dolores error voluptates minus 
              laudantium eaque, corporis nihil unde ex rerum sint! Quas, dolore 
-             quibusdam!</b></p>
+             quibusdam!
+            </b>
+        </p>
     </main>
     <footer>
         <h3>@Visual Touch - All Rights Reserved</h3>
