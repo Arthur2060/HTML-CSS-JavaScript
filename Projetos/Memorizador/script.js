@@ -72,7 +72,43 @@ function sortearElemento(){
         case 19:
             mudarElemento("rgba(121, 255, 255, 0.795)", "K", "Potássio", numeroAleatorio);
             break;
-
+        case 20:
+            mudarElemento("rgba(255, 166, 83, 0.795)", "Ca", "Cálcio", numeroAleatorio);
+            break;
+        case 21:
+            mudarElemento("rgb(198, 137, 255)", "Sc", "Escândio", numeroAleatorio);
+            break;
+        case 22:
+            mudarElemento("rgb(198, 137, 255)", "Ti", "Titânio", numeroAleatorio);
+            break;
+        case 23:
+            mudarElemento("rgb(198, 137, 255)", "V", "Vanádio", numeroAleatorio);
+            break;
+        case 24:
+            mudarElemento("rgb(198, 137, 255)", "Cr", "Cromo", numeroAleatorio);
+            break;
+        case 25:
+            mudarElemento("rgb(198, 137, 255)", "Mn", "Mangânes", numeroAleatorio);
+            break;
+        case 26:
+            mudarElemento("rgb(198, 137, 255)", "Fe", "Ferro", numeroAleatorio);
+            break;
+        case 27:
+            mudarElemento("rgb(198, 137, 255)", "Co", "Cobalto", numeroAleatorio);
+            break;
+        case 28:
+            mudarElemento("rgb(198, 137, 255)", "Ni", "Niquel", numeroAleatorio);
+            break;
+        case 29:
+            mudarElemento("rgb(198, 137, 255)", "Cu", "Cobre", numeroAleatorio);
+            break;
+        case 30:
+            mudarElemento("rgb(198, 137, 255)", "Zn", "Zinco", numeroAleatorio);
+            break;
+        case 31:
+            mudarElemento("rgb(198, 137, 255)", "Ga", "Gálio", numeroAleatorio);
+            break;
+        
         default:
             sortearElemento();
             break;
