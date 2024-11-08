@@ -3,11 +3,12 @@ const nome = document.querySelector("#nome");
 const body = document.querySelector("body");
 const numeroAtomico = document.querySelector("#numeroAtomico")
 const elemento = document.querySelector("#elemento");
+const palpite = document.querySelector("#palpite");
 
 function mudarElemento(novaCor, novoSimbolo, novoNome, novoNumero){
     numeroAtomico.innerHTML = novoNumero
     simbolo.innerHTML = `<h1>${novoSimbolo}</h1>`;
-    nome.innerHTML = `<p>${novoNome}</p>`;
+    nome.innerHTML = novoNome;
     body.style.backgroundColor = novaCor;
 }
 
@@ -16,7 +17,7 @@ function sortearElemento(){
 
     switch(numeroAleatorio){
         case 1:
-            mudarElemento("rgb(0, 157, 248)", "H", "Hidrogenio", numeroAleatorio);
+            mudarElemento("rgb(0, 157, 248)", "H", "Hidrogênio", numeroAleatorio);
             break;
         case 2:
             mudarElemento("rgba(255, 115, 115, 0.89)", "He", "Hélio", numeroAleatorio);
@@ -28,7 +29,7 @@ function sortearElemento(){
             mudarElemento("rgba(255, 166, 83, 0.795)", "Be", "Berilio", numeroAleatorio);
             break;
         case 5:
-            mudarElemento("rgb(209, 209, 113)", "B", "boro", numeroAleatorio);
+            mudarElemento("rgb(209, 209, 113)", "B", "Boro", numeroAleatorio);
             break;
         case 6:
             mudarElemento("blue", "C", "Carbono", numeroAleatorio);
@@ -116,5 +117,11 @@ function sortearElemento(){
 }
 
 elemento.addEventListener('click', () => {
-    nome.style.color = "white";
+    let valorPalpite = palpite.value; 
+
+    if(valorPalpite == nome.innerHTML){
+        nome.style.color = "green";
+    }else{
+        nome.style.color = "red";
+    }
 });
