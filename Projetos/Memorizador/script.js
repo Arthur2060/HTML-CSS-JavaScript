@@ -5,6 +5,15 @@ const numeroAtomico = document.querySelector("#numeroAtomico")
 const elemento = document.querySelector("#elemento");
 const palpite = document.querySelector("#palpite");
 
+const naoMetal = "rgb(0, 157, 248)";
+const gasNobre = "rgba(255, 115, 115, 0.89)";
+const metalAlcalino = "rgba(121, 255, 255, 0.795)";
+const alcalinoTerroso = "rgba(255, 166, 83, 0.795)";
+const semiMetais = "rgb(209, 209, 113)";
+const halogenios = "blue";
+const outrosMetais = "rgb(131, 224, 131)";
+const metaisDeTransicao = "rgb(198, 137, 255)";
+
 function mudarElemento(novaCor, novoSimbolo, novoNome, novoNumero){
     numeroAtomico.innerHTML = novoNumero
     simbolo.innerHTML = `<h1>${novoSimbolo}</h1>`;
@@ -17,97 +26,112 @@ function sortearElemento(){
 
     switch(numeroAleatorio){
         case 1:
-            mudarElemento("rgb(0, 157, 248)", "H", "Hidrogênio", numeroAleatorio);
+            mudarElemento(naoMetal, "H", "Hidrogênio", numeroAleatorio);
             break;
         case 2:
-            mudarElemento("rgba(255, 115, 115, 0.89)", "He", "Hélio", numeroAleatorio);
+            mudarElemento(gasNobre, "He", "Hélio", numeroAleatorio);
             break;
         case 3:
-            mudarElemento("rgba(121, 255, 255, 0.795)", "Li", "Lítio", numeroAleatorio);
+            mudarElemento(metalAlcalino, "Li", "Lítio", numeroAleatorio);
             break;
         case 4:
-            mudarElemento("rgba(255, 166, 83, 0.795)", "Be", "Berilio", numeroAleatorio);
+            mudarElemento(alcalinoTerroso, "Be", "Berilio", numeroAleatorio);
             break;
         case 5:
-            mudarElemento("rgb(209, 209, 113)", "B", "Boro", numeroAleatorio);
+            mudarElemento(semiMetais, "B", "Boro", numeroAleatorio);
             break;
         case 6:
-            mudarElemento("blue", "C", "Carbono", numeroAleatorio);
+            mudarElemento(naoMetal, "C", "Carbono", numeroAleatorio);
             break;
         case 7:
-            mudarElemento("blue", "N", "Nitrogênio", numeroAleatorio);
+            mudarElemento(naoMetal, "N", "Nitrogênio", numeroAleatorio);
             break;
         case 8:
-            mudarElemento("blue", "O", "Oxigênio", numeroAleatorio);
+            mudarElemento(naoMetal, "O", "Oxigênio", numeroAleatorio);
             break;
         case 9:
-            mudarElemento("blue", "F", "Flúor", numeroAleatorio);
+            mudarElemento(halogenios, "F", "Flúor", numeroAleatorio);
             break;
         case 10:
-            mudarElemento("rgba(255, 115, 115, 0.89)", "Ne", "Neônio", numeroAleatorio);
+            mudarElemento(gasNobre, "Ne", "Neônio", numeroAleatorio);
             break;
         case 11:
-            mudarElemento("rgba(121, 255, 255, 0.795)", "Na", "Sódio", numeroAleatorio);
+            mudarElemento(metalAlcalino, "Na", "Sódio", numeroAleatorio);
             break;
         case 12:
-            mudarElemento("rgba(255, 166, 83, 0.795)", "Mg", "Magnésio", numeroAleatorio);
+            mudarElemento(alcalinoTerroso, "Mg", "Magnésio", numeroAleatorio);
             break;
         case 13:
-            mudarElemento("rgb(131, 224, 131)", "Al", "Alumínio", numeroAleatorio);
+            mudarElemento(outrosMetais, "Al", "Alumínio", numeroAleatorio);
             break;
         case 14:
-            mudarElemento("rgb(209, 209, 113)", "Si", "Silício", numeroAleatorio);
+            mudarElemento(semiMetais, "Si", "Silício", numeroAleatorio);
             break;
         case 15:
-            mudarElemento("blue", "P", "Fósforo", numeroAleatorio);
+            mudarElemento(naoMetal, "P", "Fósforo", numeroAleatorio);
             break;
         case 16:
-            mudarElemento("blue", "S", "Enxofre", numeroAleatorio);
+            mudarElemento(naoMetal, "S", "Enxofre", numeroAleatorio);
             break;
         case 17:
-            mudarElemento("blue", "Cl", "Cloro", numeroAleatorio);
+            mudarElemento(halogenios, "Cl", "Cloro", numeroAleatorio);
             break;
         case 18:
-            mudarElemento("rgba(255, 115, 115, 0.89)", "Ar", "Argônio", numeroAleatorio);
+            mudarElemento(gasNobre, "Ar", "Argônio", numeroAleatorio);
             break;
         case 19:
-            mudarElemento("rgba(121, 255, 255, 0.795)", "K", "Potássio", numeroAleatorio);
+            mudarElemento(metalAlcalino, "K", "Potássio", numeroAleatorio);
             break;
         case 20:
-            mudarElemento("rgba(255, 166, 83, 0.795)", "Ca", "Cálcio", numeroAleatorio);
+            mudarElemento(alcalinoTerroso, "Ca", "Cálcio", numeroAleatorio);
             break;
         case 21:
-            mudarElemento("rgb(198, 137, 255)", "Sc", "Escândio", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "Sc", "Escândio", numeroAleatorio);
             break;
         case 22:
-            mudarElemento("rgb(198, 137, 255)", "Ti", "Titânio", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "Ti", "Titânio", numeroAleatorio);
             break;
         case 23:
-            mudarElemento("rgb(198, 137, 255)", "V", "Vanádio", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "V", "Vanádio", numeroAleatorio);
             break;
         case 24:
-            mudarElemento("rgb(198, 137, 255)", "Cr", "Cromo", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "Cr", "Cromo", numeroAleatorio);
             break;
         case 25:
-            mudarElemento("rgb(198, 137, 255)", "Mn", "Mangânes", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "Mn", "Mangânes", numeroAleatorio);
             break;
         case 26:
-            mudarElemento("rgb(198, 137, 255)", "Fe", "Ferro", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "Fe", "Ferro", numeroAleatorio);
             break;
         case 27:
-            mudarElemento("rgb(198, 137, 255)", "Co", "Cobalto", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "Co", "Cobalto", numeroAleatorio);
             break;
         case 28:
-            mudarElemento("rgb(198, 137, 255)", "Ni", "Niquel", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "Ni", "Niquel", numeroAleatorio);
             break;
         case 29:
-            mudarElemento("rgb(198, 137, 255)", "Cu", "Cobre", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "Cu", "Cobre", numeroAleatorio);
             break;
         case 30:
-            mudarElemento("rgb(198, 137, 255)", "Zn", "Zinco", numeroAleatorio);
+            mudarElemento(metaisDeTransicao, "Zn", "Zinco", numeroAleatorio);
             break;
         case 31:
-            mudarElemento("rgb(198, 137, 255)", "Ga", "Gálio", numeroAleatorio);
+            mudarElemento(outrosMetais, "Ga", "Gálio", numeroAleatorio);
+            break;
+        case 32:
+            mudarElemento(semiMetais, "Ge", "Germânio", numeroAleatorio);
+            break;
+        case 33:
+            mudarElemento(semiMetais, "As", "Arsênio", numeroAleatorio);
+            break;
+        case 34:
+            mudarElemento(naoMetal, "Se", "Selênio", numeroAleatorio);
+            break;
+        case 35:
+            mudarElemento(halogenios, "Br", "Bromo", numeroAleatorio);
+            break;
+        case 36:
+            mudarElemento(gasNobre, "Kr", "Criptônio", numeroAleatorio);
             break;
         
         default:

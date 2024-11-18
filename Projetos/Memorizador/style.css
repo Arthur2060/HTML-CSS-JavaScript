@@ -26,7 +26,7 @@ body{
 }
 
 #elemento:active{
-    transform: scale(1.5);
+    transform: scale(1.9);
 }
 
 #nome{
@@ -55,4 +55,33 @@ body{
     border: none;
     transform: scale(1.2);
     padding: 2px;
+}
+
+#teste{
+    display: flex;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 20vw;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#teste::before{
+    content: "";
+    width: 20vw;
+    height: 10vh;
+    position: absolute;
+    animation: teste ease 0.2s infinite;
+}
+
+@keyframes teste {
+    from{
+        background: conic-gradient(white 0%, 100% transparent);
+    }
+
+    to{
+        background: conic-gradient(white 100%, 0% transparent);
+    }
 }
