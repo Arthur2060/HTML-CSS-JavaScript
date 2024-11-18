@@ -11,7 +11,7 @@ const metalAlcalino = "rgba(121, 255, 255, 0.795)";
 const alcalinoTerroso = "rgba(255, 166, 83, 0.795)";
 const semiMetais = "rgb(209, 209, 113)";
 const halogenios = "blue";
-const outrosMetais = "rgb(131, 224, 131)";
+const outrosMetais = "rgb(131, 224, 131)"; 
 const metaisDeTransicao = "rgb(198, 137, 255)";
 
 function mudarElemento(novaCor, novoSimbolo, novoNome, novoNumero){
