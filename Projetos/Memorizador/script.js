@@ -22,7 +22,7 @@ function mudarElemento(novaCor, novoSimbolo, novoNome, novoNumero){
 }
 
 function sortearElemento(){
-    let numeroAleatorio = Math.trunc(Math.random() * 100);
+    let numeroAleatorio = Math.trunc(Math.random() * 1000);
 
     switch(numeroAleatorio){
         case 1:
@@ -132,6 +132,99 @@ function sortearElemento(){
             break;
         case 36:
             mudarElemento(gasNobre, "Kr", "Criptônio", numeroAleatorio);
+            break;
+        case 37:
+            mudarElemento(metalAlcalino, "Rb", "Rubídio", numeroAleatorio);
+            break;
+        case 38:
+            mudarElemento(alcalinoTerroso, "Sr", "Estrôncio", numeroAleatorio);
+            break;
+        case 39:
+            mudarElemento(metaisDeTransicao, "Y", "Ítrio", numeroAleatorio);
+            break;
+        case 40:
+            mudarElemento(metaisDeTransicao, "Zr", "Zircônio", numeroAleatorio);
+            break;
+        case 41:
+            mudarElemento(metaisDeTransicao, "Nb", "Nióbio", numeroAleatorio);
+            break;
+        case 42:
+            mudarElemento(metaisDeTransicao, "Mo", "Molibdênio", numeroAleatorio);
+            break;
+        case 43:
+            mudarElemento(metaisDeTransicao, "Tc", "Tecnécio", numeroAleatorio);
+            break;
+        case 44:
+            mudarElemento(metaisDeTransicao, "Ru", "Rutênio", numeroAleatorio);
+            break;
+        case 45:
+            mudarElemento(metaisDeTransicao, "Rh", "Ródio", numeroAleatorio);
+            break;
+        case 46:
+            mudarElemento(metaisDeTransicao, "Pd", "Paládio", numeroAleatorio);
+            break;
+        case 47:
+            mudarElemento(metaisDeTransicao, "Ag", "Prata", numeroAleatorio);
+            break;
+        case 48:
+            mudarElemento(metaisDeTransicao, "Cd", "Cádmio", numeroAleatorio);
+            break;
+        case 49:
+            mudarElemento(outrosMetais, "In", "Índio", numeroAleatorio);
+            break;
+        case 50:
+            mudarElemento(outrosMetais, "Sn", "Estanho", numeroAleatorio);
+            break;
+        case 51:
+            mudarElemento(semiMetais, "Sb", "Antimônio", numeroAleatorio);
+            break;
+        case 52:
+            mudarElemento(semiMetais, "Te", "Telúrio", numeroAleatorio);
+            break;
+        case 53:
+            mudarElemento(halogenios, "I", "Iodo", numeroAleatorio);
+            break;
+        case 54:
+            mudarElemento(gasNobre, "Xe", "Xenónio", numeroAleatorio);
+            break;
+        case 55:
+            mudarElemento(metalAlcalino, "Cs", "Césio", numeroAleatorio);
+            break;
+        case 56:
+            mudarElemento(alcalinoTerroso, "Ba", "Bário", numeroAleatorio);
+            break;
+        case 72:
+            mudarElemento(metaisDeTransicao, "Hf", "Háfnio", numeroAleatorio);
+            break;
+        case 73:
+            mudarElemento(metaisDeTransicao, "Ta", "Tântalo", numeroAleatorio);
+            break;
+        case 74:
+            mudarElemento(metaisDeTransicao, "W", "Tungstênio", numeroAleatorio);
+            break;
+        case 75:
+            mudarElemento(metaisDeTransicao, "Re", "Rênio", numeroAleatorio);
+            break;
+        case 76:
+            mudarElemento(metaisDeTransicao, "Os", "Ósmio", numeroAleatorio);
+            break;
+        case 77:
+            mudarElemento(metaisDeTransicao, "Ir", "Irídio", numeroAleatorio);
+            break;
+        case 78:
+            mudarElemento(metaisDeTransicao, "Pt", "Platina", numeroAleatorio);
+            break;
+        case 79:
+            mudarElemento(metaisDeTransicao, "Au", "Ouro", numeroAleatorio);
+            break;
+        case 80:
+            mudarElemento(metaisDeTransicao, "Hg", "Mercúrio", numeroAleatorio);
+            break;
+        case 81:
+            mudarElemento(outrosMetais, "Ti", "Tálio", numeroAleatorio);
+            break;
+        case 82:
+            mudarElemento(outrosMetais, "Pb", "Chumbo", numeroAleatorio);
             break;
         
         default:
