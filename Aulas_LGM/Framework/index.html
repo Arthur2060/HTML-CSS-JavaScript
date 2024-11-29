@@ -5,12 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <title>Framework - Bootstrap</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: "Roboto", sans-serif;
+        }
+
+        header, #logo{
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(255, 123, 0);
+        }
+
+        .nav-item .btn{
+            border-color: white;
+            color: white;
+        }
+
+        .container{
+            background-color: rgb(255, 123, 0);
+            color: white;
+        }
+        #imagem{
+            position: absolute;
+            display: grid;
+            place-items: center;
+            width: 100vw;
+            height: 70vh;
+            z-index: -1;
+        }
+    </style>
 </head>
 <body>
-    <div class="text-bg-primary p-3">
-        Brincando com Framework
-    </div>
+    <header class="container-fluid text-white d-flex">
+        <h1 class="display-1">Ubuntu<i class="bi bi-ubuntu display-2"></i></h1>
+        <nav class="navbar">
+            <ul class="navbar nav">
+                <li class="nav nav-item"><a href="#" class="btn btn-outline-dark mx-2">Home</a></li>
+                <li class="nav nav-item"><a href="#" class="btn btn-outline-dark mx-2">Sobre nós</a></li>
+                <li class="nav nav-item"><a href="#" class="btn btn-outline-dark mx-2">Download</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="imagem">
+            <img src="Ubuntu_23.04_Lunar_Lobster_English.png" alt="Tela de fundo de um SO Ubuntu" width="60%"
+                class="img rounded-4">
+        </div>
+        <section class="container rounded m-5">
+            <h1 class="display-5">Home</h1>
+            <div class="row">
+                <p class="col">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+                 excepturi <mark>iusto hic maxime suscipit</mark> quod, quas provident 
+                 aut iure rerum quisquam soluta, harum nihil itaque amet, aperiam quibusdam 
+                 dicta reiciendis.
+                </p>
+                <p class="col">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto
+                     excepturi <code>iusto hic maxime</code> suscipit quod, quas provident
+                      aut iure rerum quisquam soluta, harum nihil itaque amet, aperiam 
+                      quibusdam dicta reiciendis.
+                </p>
+            </div>
+            
+        </section>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
