@@ -226,6 +226,18 @@ function sortearElemento(){
         case 82:
             mudarElemento(outrosMetais, "Pb", "Chumbo", numeroAleatorio);
             break;
+        case 83:
+            mudarElemento(outrosMetais, "Bi", "Bismuto", numeroAleatorio);
+            break;
+        case 84:
+            mudarElemento(semiMetais, "Po", "Polonio", numeroAleatorio);
+            break;
+        case 85:
+            mudarElemento(halogenios, "At", "Astato", numeroAleatorio);
+            break;
+        case 86:
+            mudarElemento(gasNobre, "Rn", "Radonio", numeroAleatorio);
+            break;
         
         default:
             sortearElemento();
