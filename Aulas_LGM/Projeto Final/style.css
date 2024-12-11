@@ -1,45 +1,5 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 0; 
 }
 
-header{
-    justify-content: space-between;
-    border-bottom: solid 1px rgb(70, 70, 70);
-}
-
-#buscador input{
-    border: solid rgb(70, 70, 70) 1px;
-}
-
-nav ul{
-    list-style: none;
-}
-
-nav ul li{
-    margin: 3px;
-}
-
-nav ul li a{
-    text-decoration: none;
-    color: rgb(70, 70, 70);
-}
-
-.thumb{
-    background: transparent;
-    border: solid rgb(70, 70, 70) 2px;
-    width: 15vw;
-    height: 30vh;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.thumb img{
-    width: 100%;
-}
-
-.thumb p{
-    align-self: center;
-    text-align: justify;
-    padding: 2px;
-}
