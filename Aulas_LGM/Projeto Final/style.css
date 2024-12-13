@@ -29,9 +29,7 @@ body div {
 
 .titulo {
     margin: 0;
-    background: linear-gradient(45deg, #000000, #4c0053);
     width: fit-content;
     border-radius: 10px;
-    color: #fff;
     padding: 3px;
 }
