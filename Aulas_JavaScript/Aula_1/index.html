@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 1 - JavaScript</title>
 </head>
 <body>
-    
+    <section>
+        <h2>DOM: Alterar estilo em JavaScript</h2>
+        <button onclick="mudarEstilo()">Clique para mudar estilo</button>
+        <div id="divAlterar">Div com o estilo original</div>
+    </section>
+
+    <script>
+        function mudarEstilo() {
+            const caixa = document.getElementById('divAlterar');
+            caixa.style.backgroundColor = "#ffabed"
+            caixa.style.border = "solid black 2px"
+        }
+    </script>
 </body>
 </html>
