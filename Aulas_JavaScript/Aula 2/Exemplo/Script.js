@@ -44,6 +44,24 @@ function exibirNome(){
 function somarNumeros(){
     const numero1 = parseFloat(document.getElementById("numero1").value);
     const numero2 = parseFloat(document.getElementById("numero2").value);
-    const soma = numero1 + numero2;
-    document.getElementById("resultadoSoma").innerText = `A soma é: ${soma}!`
+    const opeacao = document.getElementById("operacao").value;
+    
+    let soma;
+    
+    switch(opeacao){
+        case "+":
+            soma = numero1 + numero2;
+            break;
+        case "-":
+            soma = numero1 - numero2;
+            break;
+        case "*":
+            soma = numero1 * numero2;
+            break;
+        case "/":
+            soma = numero1 / numero2;
+            break;
+    }
+
+    document.getElementById("resultadoSoma").innerText = `O resultado é: ${soma}!`
 }
