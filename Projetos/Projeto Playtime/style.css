@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Madimi One", serif;
+}
+
+body{
+    background-color: #0084FF;
+}
+
+header{
+    background-color: #F4D800;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    margin: auto;
+    padding: 0 2vw;
+    border-radius: 0 0 2em 2em;
+}
+
+#bem-vindo{
+    height: fit-content;
+    background-color: #0084FF;
+    color: #F4D800;
+    padding: 0.5%;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+}
+
+nav ul li{
+    margin: 0 2vw;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+code{
+    color: #FF4343;
+}
+
+#logo{
+    width: 20%;
+}
+
+section{
+    margin: 2vh 0;
+}
+
+#poppyPoster{
+    background-color: #F4D800;
+    border-top: solid #FF4343 2vh;
+    border-bottom: solid #FF4343 2vh;
+    display: flex;
+    padding: 2% 10%;
+    justify-content: flex-end;
+    text-align: end;
+}
+
+#poppyPoster h1{
+    margin: auto 0;
+    margin-right: 1vw;
+    width: 15vw;
+    font-size: 25px;
+}
+
+#imagenPoppy{
+    width: 20%;
+    background-color: #1737B6;
+    border: solid #FF4343 0.8em;
+    border-radius: 6em;
+    padding: 2%;
+}
+
+#precoPoppy{
+    background-color: #0084FF;
+    color: #F4D800;
+    height: fit-content;
+    padding: 0.5% 0.3%;
+    border-radius: 0.2em;
+    transform: scale(4) rotate(-35deg);
+    margin: auto;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.507);
+}
+
+#etiquetaNovo{
+    position: relative;
+    transform: scale(4);
+    top: 27vh;
+    right: 5vw;
+}
