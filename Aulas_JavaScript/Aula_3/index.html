@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <title>Registro de Consultas</title>
 </head>
 
-<body>
+<body onload="carregar()">
     <form id="form" class="form container">
         <input type="text" id="nome" placeholder="nome" required class="form-control">
         <select id="medico" class="form-control">
@@ -79,7 +79,7 @@
                 var botaoEditar = document.createElement("button");
 
                 botaoExcluir.addEventListener("click", function () {
-                    excluir();
+                    excluir(consulta.index);
                 })
 
                 botaoEditar.addEventListener("click", function () {
@@ -93,9 +93,35 @@
                 ultimaCelula.appendChild(botaoExcluir)
                 ultimaCelula.appendChild(botaoEditar)
             });
+        }
+    
+        function excluir() {
+            consultas.remove(consulta.index);
+        }
 
-            function salvar(){
+        function salvar() {
+            const jsonData = JSON.stringify(consultas, null, 2);
+            const blob = new Blob([jsonData], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Consulta.json";
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        async function carregar() {
+            try {
+                const resposta = await fetch("Consultas.json");
+                const dadosCarregados = await resposta.json();
+
+                dadosCarregados.forEach((consulta) => {
+                    consultas.push(consulta);
+                });
                 
+                atualizarTabela();
+            } catch (error) {
+                console.error("Erro ao carregar os dados:", error);
             }
         }
     </script>
