@@ -1,74 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atualização de Tabela</title>
-  <style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-    th {
-        background-color: #f4f4f4;
-    }
-    img {
-        max-width: 50px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<h1>Registros de Acesso</h1>
-<table>
-  <thead>
-  <tr>
-    <th>Nome</th>
-    <th>Horário</th>
-    <th>Imagem</th>
-  </tr>
-  </thead>
-  <tbody id="registros">
-  <!-- Registros serão carregados dinamicamente aqui -->
-  </tbody>
-</table>
-
-<script>
-  // Função para carregar os dados da tabela diretamente do servidor
-  function carregarDados() {
-      fetch('/atualizacao') // Faz uma requisição para o handler Java no servidor
-          .then(response => {
-              if (!response.ok) {
-                  throw new Error('Erro ao buscar dados: ' + response.statusText);
-              }
-              return response.json();
-          })
-          .then(data => {
-              let html = '';
-
-              // Constrói o HTML das linhas da tabela
-              data.forEach(registro => {
-                  html += `<tr>
-                              <td><img src="${registro.imagem}" alt="Imagem"></td>
-                              <td>${registro.nome}</td>
-                              <td>${registro.horario}</td>
-                          </tr>`;
-              });
-
-              // Atualiza a tabela
-              document.getElementById('registros').innerHTML = html;
-          })
-          .catch(error => console.error('Erro:', error));
-  }
-
-  // Atualiza a tabela ao carregar a página
-  carregarDados();
-
-  // Atualiza a tabela a cada 2 segundos
-  setInterval(carregarDados, 2000);
-</script>
+  <h1>Registros de Acesso</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Horário</th>
+        <th>Imagem</th>
+      </tr>
+    </thead>
+    <tbody id="registros">
+      <!-- Registros serão carregados dinamicamente aqui -->
+    </tbody>
+  </table>
+  <script src="script.js"></script>
 </body>
+
 </html>
