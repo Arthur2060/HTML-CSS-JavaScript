@@ -1,6 +1,6 @@
   // Função para carregar os dados da tabela diretamente do servidor
   function carregarDados() {
-    fetch('/atualizacao') // Faz uma requisição para o handler Java no servidor
+    fetch('atualizacao.json') // Faz uma requisição para o handler Java no servidor
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro ao buscar dados: ' + response.statusText);
