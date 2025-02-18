@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Aula alguma - XML</title>
+</head>
+
+<body class="container">
+    <h2 class="display-1">Cadastro de Produtos</h2>
+    <form id="produtoForm" class="form border rounded p-3">
+        <label for="nome">Nome do Produto:</label>
+        <input type="text" id="nome" class="form-control" required><br>
+
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" class="form-control">
+            <option value="Eletronico">Eletrônico</option>
+            <option value="Alimento">Alimento</option>
+        </select>
+
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" step="0.01" class="form-control" required><br>
+
+        <div class="btn-group">
+            <button type="button" onclick="adicionarProduto()" class="btn btn-primary">Adicionar Produto</button>
+            <button type="button" onclick="gerarXML()" class="btn btn-warning">Gerar XML</button>
+            <button type="button" onclick="baixarXML()" class="btn btn-danger">Baixar XML</button>
+        </div>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td><strong>Nome</strong></td>
+                <td><strong>Categoria</strong></td>
+                <td><strong>Preço</strong></td>
+                <td><strong>Ações</strong></td>
+            </tr>
+        </thead>
+        <tbody id="tabela"></tbody>
+    </table>
+
+    <h2 class="display-5">XML Gerado:</h2>
+    <pre id="XMLOutput" style="background-color: rgb(51, 75, 35); color: #7af17a;" class="rounded"></pre>
+
+    <script>
+        let xmlString = "";
+        let produtos = [];
+
+        function adicionarProduto() {
+            let nome = document.getElementById("nome").value;
+            let categoria = document.getElementById("categoria").value;
+            let preco = parseFloat(document.getElementById("preco").value);
+
+            produtos.push({ nome, categoria, preco });
+
+            document.getElementById("produtoForm").reset();
+            alterarTabela();
+        }
+
+        function alterarTabela() {
+            let tabela = document.getElementById("tabela");
+            tabela.innerHTML = ""
+
+            produtos.forEach((produto, index) => {
+                let newRow = tabela.insertRow();
+                newRow.insertCell().textContent = produto.nome;
+                newRow.insertCell().textContent = produto.categoria;
+                newRow.insertCell().textContent = produto.preco;
+
+                let cellAcoes = newRow.insertCell();
+                let botaoExcluir = document.createElement("button");
+                botaoExcluir.textContent = "Excluir";
+                botaoExcluir.className = "btn btn-danger"
+
+                botaoExcluir.onClick = () => excluirProduto(index);
+
+                cellAcoes.appendChild(botaoExcluir);
+            });
+        }
+
+        function excluirProduto(index) {
+            alert("ok")
+            produtos.splice(index, 1);
+
+            alterarTabela();
+        }
+
+        function gerarXML() {
+            let pre = document.getElementById("XMLOutput")
+            let dataEHora = new Date();
+            xmlString = `<?xml version="1.0" encoding="UTF-8"?>`;
+            xmlString += `\n<produtos>`;
+            produtos.forEach(produto => {
+                xmlString += `\n    <produto>\n`;
+                xmlString += `      <nome>${produto.nome}</nome>\n`;
+                xmlString += `      <categoria>${produto.categoria}</categoria>\n`;
+                xmlString += `      <preco>${produto.preco}</preco>\n`;
+                xmlString += `  </produto>`;
+            })
+            xmlString += `\n<dataEHora>${dataEHora}</dataEHora>`
+            xmlString += `\n</produtos>`;
+            pre.textContent = xmlString;
+            pre.style.border = "solid gray 5px";
+            pre.style.padding = "1%";
+            pre.style.boxShadow = "inset 0 0 20px #7af17a";
+        }
+
+
+        function baixarXML() {
+            if (xmlString === "") {
+                alert("Primeiro gere o XML");
+                return
+            }
+            let blob = new Blob([xmlString], { type: "application/xml" });
+            let link = document.createElement("a");
+
+            link.href = URL.createObjectURL(blob);
+            link.download = "produto.xml";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+
+</html>
