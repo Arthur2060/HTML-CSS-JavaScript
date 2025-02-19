@@ -76,14 +76,13 @@
                 botaoExcluir.textContent = "Excluir";
                 botaoExcluir.className = "btn btn-danger"
 
-                botaoExcluir.onClick = () => excluirProduto(index);
+                botaoExcluir.onclick = () => excluirProduto(index);
 
                 cellAcoes.appendChild(botaoExcluir);
             });
         }
 
         function excluirProduto(index) {
-            alert("ok")
             produtos.splice(index, 1);
 
             alterarTabela();
