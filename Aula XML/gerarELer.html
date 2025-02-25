@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Gerar e Ler XML e JSON</title>
     <style>
-        .form-control{
+        .form-control {
             margin: 2vh 0;
         }
     </style>
 </head>
+
 <body>
     <header class="container-fluid border ">
         <h1 class="display-5">Gerar e Ler arquivos XML e JSON</h1>
@@ -33,36 +35,37 @@
         <input type="number" id="preco" placeholder="Preço" class="form-control" required>
 
         <div class="btn-group">
-            <button type="button" id="registrar" class="btn btn-secondary"><strong>Registrar</strong></button>
-            <button type="button" id="importar" class="btn btn-warning"><strong>Importar</strong></button>
-        </div>
-
-        <div class="btn-group">
-            
+            <button type="button" id="registrar" class="btn btn-secondary"><strong>Registrar</strong></button>  
         </div>
     </form>
 
-    <table class="table table-striped container">
-        <thead>
-            <tr>
-                <td><strong>Nome:</strong></td>
-                <td><strong>Categoria:</strong></td>
-                <td><strong>Valor (R$):</strong></td>
-                <td><strong>Utilidades:</strong></td>
-            </tr>
-        </thead>
-        <tbody id="tabelaBody">
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>
-                    <button type="button" id="gerarJson" class="btn btn-warning">Gerar JSON</button>
-                    <button type="button" id="gerarXml" class="btn btn-danger">Gerar XML</button>
-                </td>
-            </tr>
-        </tfoot>
-    </table>
+    <div id="conteudo" style="display: none;">
+        <table class="table table-striped container">
+            <thead>
+                <tr>
+                    <td><strong>Nome:</strong></td>
+                    <td><strong>Categoria:</strong></td>
+                    <td><strong>Preço (R$):</strong></td>
+                    <td><strong>Utilidades:</strong></td>
+                </tr>
+            </thead>
+            <tbody id="tabelaBody">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <button type="button" id="gerarJson" class="btn btn-warning">Gerar JSON</button>
+                        <button type="button" id="gerarXml" class="btn btn-danger">Gerar XML</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="container border p-2" id="gerador" style="display: none;">
+        <pre id="Output"></pre>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
