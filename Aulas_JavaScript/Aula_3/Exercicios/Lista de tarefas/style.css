@@ -1,8 +1,24 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    background-color: transparent;
+    border: solid 2px yellow;
+    border-radius: 10px;
+    color: yellow;
+    width: 10vw;
+    padding: 2%;
+    font-weight: bold;
+    transition: ease 0.2s;
+}
+
+button:hover {
+    background-color: yellow;
+    color: rgb(32, 32, 32);
 }
 
 body {
@@ -19,7 +35,8 @@ form {
     transition: ease 1s;
 }
 
-form, #listaContainer {
+form,
+#listaContainer {
     background-color: rgb(32, 32, 32);
     border-radius: 30px;
     padding: 2%;
@@ -30,7 +47,7 @@ form:hover {
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.205);
 }
 
-form input{
+form input {
     background-color: rgb(49, 49, 49);
     border: none;
     color: rgb(196, 196, 196);
@@ -38,21 +55,11 @@ form input{
     padding: 3%;
     width: 40vw;
     margin: 1vh 0;
+    transition: ease 0.2s;
 }
 
-form button {
-    background-color: transparent;
-    border: solid 2px yellow;
-    border-radius: 10px;
-    color: yellow;
-    width: 10vw;
-    padding: 2%;
-    transition: ease 0.5s;
-}
-
-form button:hover {
-    background-color: yellow;
-    color: black;
+form input:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.185);
 }
 
 #listaContainer td {
@@ -61,6 +68,22 @@ form button:hover {
     transition: ease 0.2s;
 }
 
-#listaContainer td:hover {
-    background-color: rgb(49, 49, 49);
+.botaoExcluir {
+    border-color: red;
+    color: red;
+}
+
+.botaoExcluir:hover {
+    background-color: red;
+    color: rgb(32, 32, 32);
+}
+
+.botaoEditar {
+    border-color: orange;
+    color: orange;
+}
+
+.botaoEditar:hover {
+    background-color: orange;
+    color: rgb(32, 32, 32);
 }
