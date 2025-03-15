@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>API Rest: Exercicio 1 - Lista de tarefas</title>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="titulo" placeholder="Titulo" required>
+            <input type="textarea" id="descricao" placeholder="Descrição" required>
+            <input type="date" id="data">
+            <input type="time" id="hora">
+            <button onclick="adicionarTarefa()">Adicionar</button>
+        </form>
+
+        <div id="listaContainer">
+            <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td><strong>Titulo</strong></td>
+                        <td><strong>Descrição</strong></td>
+                        <td><strong>Data</strong></td>
+                        <td><strong>Hora</strong></td>
+                    </tr>
+                </thead>
+                <tbody id="lista"></tbody>
+            </table>
+        </div>
+
+        <script src="Script.js"></script>
+    </body>
+</html>
