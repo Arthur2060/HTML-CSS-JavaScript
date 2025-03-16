@@ -21,6 +21,10 @@ button:hover {
     color: rgb(32, 32, 32);
 }
 
+button:active {
+    filter: brightness(50%);
+}
+
 body {
     display: grid;
     width: 100%;
@@ -86,4 +90,9 @@ form input:hover {
 .botaoEditar:hover {
     background-color: orange;
     color: rgb(32, 32, 32);
+}
+
+input[type="checkbox"] {
+    background: green;
+    border: solid 2px yellow;
 }

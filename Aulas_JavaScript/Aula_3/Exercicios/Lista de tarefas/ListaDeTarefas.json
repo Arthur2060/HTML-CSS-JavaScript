@@ -1,16 +1,9 @@
 [
-    {
-        "id": 1,
-        "titulo": "Limpar o quarto",
-        "descricao": "Isso realmente precisa de descrição?",
-        "data": null,
-        "hora": "08:00"
-    },
-    {
-        "id": 2,
-        "titulo": "Limpar PC",
-        "descricao": "Tirar poeira",
-        "data": null,
-        "hora": null
-    }
+  {
+    "titulo": "Limpar PC",
+    "descricao": "Tirar poeira",
+    "data": "",
+    "hora": "",
+    "id": 1
+  }
 ]

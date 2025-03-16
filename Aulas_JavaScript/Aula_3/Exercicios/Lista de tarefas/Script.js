@@ -13,11 +13,20 @@ async function atualizarLista() {
         let botaoExcluir = document.createElement("button")
         let botaoEditar = document.createElement("button")
 
+        botaoExcluir.onclick = function () {
+            excluirTarefa(task.id);
+        }
+
+        botaoEditar.onclick = function () {
+            editarTarefa(task);
+        }
+
         botaoEditar.textContent = "Editar"
         botaoExcluir.textContent = "Excluir";
         
         botaoEditar.classList = "botaoEditar"
         botaoExcluir.classList = "botaoExcluir"
+        checkbox.classList = "checkbox"
 
         checkbox.type = "checkbox";
 
@@ -51,6 +60,42 @@ async function adicionarTarefa() {
     } else {
         alert("Erro ao adicionar tarefa a lista!");
     }
+}
+
+async function excluirTarefa(id) {
+    const response = await fetch((`${url}/tarefas/${id}`), {
+        method: "DELETE"
+    });
+
+    if (!response.ok) {
+        alert("Erro ao excluir tarefa");
+    }
+}
+
+function editarTarefa(task) {
+    let titulo = document.getElementById("titulo").value;
+    let descricao = document.getElementById("descricao").value;
+    let data = document.getElementById("data").value;
+    let hora = document.getElementById("hora").value;
+
+    titulo = task.titulo;
+    descricao = task.descricao;
+    data = task.data;
+    hora = task.hora;
+
+    const botao = document.getElementById("botaoAdicionar");
+
+    botao.addEventListener = ("click", async function () {
+        const response = await fetch(`${url}/tarefas/${task.id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: { titulo, descricao, data, hora }
+        });
+
+        if (!response.ok) {
+            alert("Erro ao alterar tarefa");
+        }
+    });
 }
 
 atualizarLista();
