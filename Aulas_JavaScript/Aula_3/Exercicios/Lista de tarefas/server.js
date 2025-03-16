@@ -62,17 +62,6 @@ app.delete("/tarefas/:id", (req, res) => {
     });
 });
 
-app.put("/tarefas/:id", (req, res) => {
-    fs.readFile(BANCO, (err, data) => {
-        if (err) {
-            res.status(500).json({ error: "Erro ao ler arquivo" });
-        } else {
-            let tasks = JSON.parse(data);
-            let task  = tasks.findIndex(req.params.id);
-        }
-    });
-});
-
 app.listen(PORT, () => {
     console.log(`Servidor iniciado no endereço: http://localhost:${PORT}`)
 });

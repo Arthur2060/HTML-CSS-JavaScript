@@ -57,7 +57,7 @@ form input {
     color: rgb(196, 196, 196);
     border-radius: 30px;
     padding: 3%;
-    width: 40vw;
+    width: 100%;
     margin: 1vh 0;
     transition: ease 0.2s;
 }
@@ -70,6 +70,10 @@ form input:hover {
     padding: 0.5vh 0.5vw;
     font-weight: bold;
     transition: ease 0.2s;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(22, 22, 22);
 }
 
 .botaoExcluir {
@@ -92,7 +96,18 @@ form input:hover {
     color: rgb(32, 32, 32);
 }
 
-input[type="checkbox"] {
-    background: green;
-    border: solid 2px yellow;
+@media (max-width: 491px) {
+    form {
+        width: 90vw;
+    }
+
+    form h1 {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    form button {
+        width: 100%;
+    }
 }
