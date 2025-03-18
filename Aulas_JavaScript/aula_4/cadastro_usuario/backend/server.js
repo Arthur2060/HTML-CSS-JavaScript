@@ -4,7 +4,8 @@ const sqlite = require("sqlite3").verbose();
 const app = express();
 const PORT = 3000;
 
-app.use(cors);
+app.use(cors());
+app.use(express.json());
 
 const db = new sqlite.Database("users.db", (err) => {
     if (err) return console.error(err.message);
@@ -31,7 +32,7 @@ app.post("/users", (req, res) => {
 app.get("/users", (req, res) => {
     db.all(`SELECT * FROM usuarios`, [], (err, rows) => {
         if (err) return res.status(500).json({error: err.message});
+        res.json(rows)
     });
 });
-
 app.listen(PORT, () => console.log("Servidor rodando em http://localhost:3000"));
