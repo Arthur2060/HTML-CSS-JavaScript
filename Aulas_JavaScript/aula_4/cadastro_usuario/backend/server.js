@@ -35,4 +35,15 @@ app.get("/users", (req, res) => {
         res.json(rows)
     });
 });
+
+app.delete("/users/:id", (req, res) => {
+    const userid = parseInt(req.params.id);
+    db.run(`DELETE FROM usuarios WHERE id = ?`, [userid], 
+        function (err) {
+            if (err) return res.status(500).json({ error: err.message });
+            res.json({ message: "Usuario deletado com sucesso" });
+        }
+    );
+});
+
 app.listen(PORT, () => console.log("Servidor rodando em http://localhost:3000"));

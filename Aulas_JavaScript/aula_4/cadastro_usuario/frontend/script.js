@@ -34,6 +34,7 @@ async function atualizar() {
             <td>${user.id}</td>
             <td>${user.nome}</td>
             <td>${user.email}</td>
+            <td><button onclick="deletar()">Excluir</button></td>
         </tr>\n
         `
 
@@ -42,6 +43,16 @@ async function atualizar() {
 
     if (!response.ok) {
         alert("Falha ao carregar usuarios");
+    }
+}
+
+async function deletar(id) {
+    const response = await fetch(`${url}/${id.id}`, {
+        method: "DELETE"
+    });
+
+    if (!response.ok) {
+        alert("Erro ao deletar usuario!")
     }
 }
 
