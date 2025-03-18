@@ -51,7 +51,7 @@ form:hover {
     box-shadow: 0 0 10px rgba(255, 255, 0, 0.205);
 }
 
-form input {
+form input, textarea {
     background-color: rgb(49, 49, 49);
     border: none;
     color: rgb(196, 196, 196);
@@ -62,8 +62,12 @@ form input {
     transition: ease 0.2s;
 }
 
-form input:hover {
+form input:hover, textarea:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.185);
+}
+
+textarea {
+    resize: vertical;
 }
 
 #listaContainer td {
@@ -83,16 +87,6 @@ tbody tr:nth-child(odd) {
 
 .botaoExcluir:hover {
     background-color: red;
-    color: rgb(32, 32, 32);
-}
-
-.botaoEditar {
-    border-color: orange;
-    color: orange;
-}
-
-.botaoEditar:hover {
-    background-color: orange;
     color: rgb(32, 32, 32);
 }
 
