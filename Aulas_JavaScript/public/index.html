@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Interativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Cadastro</h2>
+        <form id="formulario">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome">
+                <div class="error" id="erro-nome"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email">
+                <div class="error" id="erro-email"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="tel">Telefone:</label>
+                <input type="tel" name="tel" id="tel">
+                <div class="error" id="erro-tel"></div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn" id="btn-cadastrar"
+                onclick="cadastrar()">Cadastrar</button>
+
+                <button type="button" class="btn" id="btn-atualizar"
+                onclick="atualizar()">Atualizar</button>
+
+                <button type="button" class="btn" id="btn-excluir"
+                onclick="excluir()">Excluir</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="script.js"></script>
+</html>
