@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: rgb(187, 66, 36);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    height: 10vh;
+}
+
+nav li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1vw;
+    transition: ease 0.2s;
+    color: white;
+}
+
+nav li:hover {
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+#container-cadastra-login nav li:hover {
+    background-color: rgba(0, 0, 0, 0.13);
+    border-radius: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+#container-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
