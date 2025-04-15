@@ -33,7 +33,7 @@ nav li:hover {
     background-color: rgba(0, 0, 0, 0.377);
 }
 
-#container-cadastra-login nav li:hover {
+#container-cadastro-login nav li:hover {
     background-color: rgba(0, 0, 0, 0.13);
     border-radius: 20px;
 }
