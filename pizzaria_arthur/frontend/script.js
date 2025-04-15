@@ -19,12 +19,13 @@ async function login() {
     
     const data = await response.json();
     alert(`Login efetuado com sucesso! Bem-vindo ${data.nome}`);
+    
+    alternarPagina('index.html');
 }
 
 document.getElementById("botao-login").addEventListener("click", (event) => {
     event.preventDefault();
     login();
-    alternarPagina('index.html');
 });
 
 async function cadastro() {
@@ -34,6 +35,10 @@ async function cadastro() {
     const endereco = document.getElementById("endereco-cadastro").value;
     const senha = document.getElementById("senha-cadastro").value;
     
+    if (nome == "" || endereco == "" || telefone == "" || email == "" || senha == "") {
+        return alert("Preencha todos os campos")
+    }
+
     const response = await fetch("http://localhost:3000/cliente", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -45,10 +50,7 @@ async function cadastro() {
     } else {
         alert("Usuario cadastrado com sucesso!");
     }
-}
 
-function botaoCadastro() {
-    cadastro()
     alternarPagina('index.html')
 }
 
