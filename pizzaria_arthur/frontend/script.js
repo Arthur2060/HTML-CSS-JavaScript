@@ -1,3 +1,21 @@
+async function atualizarCardapio() {
+    const cardapioExibido = document.getElementById("cardapio");
+
+    const response = await fetch("http://localhost:3000/pizza");
+    const data = await response.json()
+
+    cardapioExibido.innerHTML = "";
+
+    data.forEach(newItem => {
+        cardapioExibido.innerHTML += `
+            <li>
+                <img src="${newItem.imagem}">
+                <h6>${newItem.nome}</h6>
+                <p>${newItem.descricao}</p>
+            </li>
+        `
+    });
+}
 
 async function login() {
     const email = document.getElementById("email-login").value;
@@ -19,7 +37,7 @@ async function login() {
     
     const data = await response.json();
     alert(`Login efetuado com sucesso! Bem-vindo ${data.nome}`);
-    
+
     alternarPagina('index.html');
 }
 

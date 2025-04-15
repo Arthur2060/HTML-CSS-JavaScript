@@ -79,7 +79,7 @@ nav a {
     padding: 2%;
 }
 
-#container-cardapio img {
+#cardapio li img {
     max-width: 50vw;
     height: 25vh;
 }
