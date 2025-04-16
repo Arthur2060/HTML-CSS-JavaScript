@@ -5,7 +5,7 @@ const sqlite = require("sqlite3").verbose();
 const app = express();
 
 app.use(cors());
-app.use(express.static("C:/Users/Aluno/Desktop/Frontend - 15.04.2025/HTML-CSS-JavaScript/pizzaria_arthur/frontend"));
+app.use(express.static("./frontend"));
 app.use(express.json());
 
 const db = new sqlite.Database("./database.db", (err) => {
@@ -59,6 +59,17 @@ app.post("/cliente", (req, res) => {
     )
 })
 
+app.delete("/cliente/:id", (req, res) => {
+    const id = req.params.id;
+    db.run(`DELETE FROM clientes WHERE id = ?`,
+        [id],
+        (err) => {
+            if (err) return res.status(400).json({ error: err.message });
+            res.json("Usuario deletado com sucesso!");
+        }
+    )
+})
+
 app.post("/login", (req,res) => {
     const { email, senha } = req.body
     db.get("SELECT * FROM clientes WHERE email = ? AND senha = ?",
@@ -85,6 +96,17 @@ app.post("/pizza", (req, res) => {
         (err) => {
             if (err) return res.status(400).json({ error: err.message });
             res.status(200).json("Pizza adicionada com sucesso ao cardápio!");
+        }
+    )
+})
+
+app.delete("/pizza/:id", (req, res) => {
+    const id = req.params.id;
+    db.run(`DELETE FROM pizzas WHERE id = ?`,
+        [id],
+        (err) => {
+            if (err) return res.status(400).json({ error: err.message });
+            res.json("Pizza deletada com sucesso!");
         }
     )
 })

@@ -10,8 +10,10 @@ async function atualizarCardapio() {
         cardapioExibido.innerHTML += `
             <li>
                 <img src="${newItem.imagem}">
-                <h6>${newItem.nome}</h6>
-                <p>${newItem.descricao}</p>
+                <div>
+                <h3>${newItem.nome}</h3>
+                    <p>${newItem.descricao}</p>
+                </div>
             </li>
         `
     });
@@ -36,6 +38,7 @@ async function login() {
     }
     
     const data = await response.json();
+
     alert(`Login efetuado com sucesso! Bem-vindo ${data.nome}`);
 
     alternarPagina('index.html');
