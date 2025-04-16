@@ -111,6 +111,18 @@ app.delete("/pizza/:id", (req, res) => {
     )
 })
 
+app.put("/pizza/:id", (req, res) => {
+    const id = req.params.id
+    const { nome, descricao, imagem } = req.body
+    db.run(`UPDATE pizzas SET nome = ?, descricao = ?, imagem = ? WHERE id = ?`,
+        [nome, descricao, imagem, id],
+        (err) => {
+            if (err) return res.status(400).json({ error: err.message });
+            res.json("Pizza atualizada com sucesso!")
+        }
+    )
+})
+
 app.listen(PORT, () => {
     console.log("Servidor ouvindo em http://localhost:3000");
 })

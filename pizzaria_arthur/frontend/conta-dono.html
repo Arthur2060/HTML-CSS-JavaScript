@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conta Administradora</title>
+</head>
+<body onload="atualizarCardapio()">
+    <header>
+        <div id="container-logo">
+            <img src="Logo.png" alt="" width="190vw">
+        </div>
+
+        <div id="container-nav">
+            <nav>
+                <ul>
+                    <li><a onclick="alternarPagina('index.html')">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="secao-formulario-pizza">
+            <form id="formulario-pizza">
+                <h1>Adicionar Pizza</h1>
+
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome-pizza">
+                </div>
+
+                <div class="campo">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao-pizza"></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="imagem">Link da imagem</label>
+                    <input type="url" id="imagem-pizza">
+                </div>
+
+                <button type="button" onclick="cadastrarPizza()">Adicionar</button>
+            </form>
+        </section>
+    </main>
+    <footer id="secao-cardapio">
+        <div id="container-cardapio">
+            <ul id="cardapio"></ul>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

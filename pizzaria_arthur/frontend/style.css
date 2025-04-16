@@ -112,6 +112,55 @@ nav a {
     filter: grayscale(0);
 }
 
+#secao-formulario-pizza {
+    display: flex;
+    justify-content: center;
+    min-height: 85vh;
+}
+
+#formulario-pizza {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+}
+
+#formulario-pizza .campo {
+    margin: 1vh 0;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+#formulario-pizza input{
+    border: 1px gray solid;
+    padding: 1%;
+    border-radius: 10px;
+    width: 20vw;
+}
+
+#formulario-pizza textarea{
+    border: 1px gray solid;
+    padding: 1%;
+    border-radius: 10px;
+    width: 20vw;
+    resize: vertical;
+}
+
+#formulario-pizza button {
+    background-color: #102E50;
+    color: white;
+    border: none;
+    padding: 2%;
+    transition: ease 0.2s;
+}
+
+#formulario-pizza button:hover {
+    background-color: #163e6b;
+}
+
 @media (max-width: 425px) {
     header {
         display: flex;
@@ -130,6 +179,10 @@ nav a {
 
     #container-caradapio {
         padding: 0;
+    }
+
+    input {
+        width: 100%;
     }
 }
 
