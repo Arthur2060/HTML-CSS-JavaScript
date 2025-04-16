@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Pizzaria</title>
 </head>
-<body onload="atualizarCardapio()">
+
+<body onload="atualizarCardapio(), verificarConta()">
     <header>
         <div id="container-logo">
             <img src="Logo.png" alt="Logo" width="190vw">
@@ -35,7 +37,9 @@
         <section id="inicio">
             <div id="letreiro">
                 <h1>Bem-Vindo á nossa pizzaria</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi pariatur dolores, quaerat sequi cum recusandae autem dignissimos facere consectetur enim atque laudantium reprehenderit eveniet ab, dolorum corporis. Magnam, harum expedita.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi pariatur dolores, quaerat sequi cum
+                    recusandae autem dignissimos facere consectetur enim atque laudantium reprehenderit eveniet ab,
+                    dolorum corporis. Magnam, harum expedita.</p>
             </div>
         </section>
         <section id="secao-cardapio">
@@ -46,4 +50,5 @@
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>

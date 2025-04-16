@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const sqlite = require("sqlite3").verbose();
+const fs = require("fs");
 
 const app = express();
 
@@ -14,6 +15,8 @@ const db = new sqlite.Database("./database.db", (err) => {
 });
 
 const PORT = 3000;
+
+const CONTA = "conta.json"
 
 db.run(`
     CREATE TABLE IF NOT EXISTS clientes 
@@ -76,9 +79,19 @@ app.post("/login", (req,res) => {
         [email, senha],
         (err, row) => {
             if (err) return res.status(400).json({ error: err.message });
-            res.json(row)
+            fs.writeFile(CONTA, JSON.stringify(row, null, 2), err => {
+                if (err) return res.status(400).json({ error: err.message });
+                res.json(row)
+            })
         }
     )
+})
+
+app.delete("/logout", (req, res) => {
+    fs.writeFile(CONTA, JSON.stringify(null, null, 2), err => {
+        if (err) return res.status(400).json({ error: err.message });
+        res.json("Logout bem sucedido!")
+    })
 })
 
 app.get("/pizza", (req, res) => {
@@ -121,6 +134,13 @@ app.put("/pizza/:id", (req, res) => {
             res.json("Pizza atualizada com sucesso!")
         }
     )
+})
+
+app.get("/conta", (req, res) => {
+    fs.readFile(CONTA, (err, data) => {
+        if (err) return res.status(400).json({ error: err.message });
+        res.json(JSON.parse(data))
+    })
 })
 
 app.listen(PORT, () => {

@@ -26,7 +26,7 @@ async function cadastrarPizza() {
 
     const response = await fetch("http://localhost:3000/pizza", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nome, descricao, imagem })
     })
 
@@ -40,7 +40,7 @@ async function cadastrarPizza() {
 
 document.getElementById("botao-pizza").addEventListener("click", (event) => {
     preventDefault()
-    
+
     cadastrarPizza()
     atualizarCardapio()
 })
@@ -48,21 +48,21 @@ document.getElementById("botao-pizza").addEventListener("click", (event) => {
 async function login() {
     const email = document.getElementById("email-login").value;
     const senha = document.getElementById("senha-login").value;
-    
+
     if (!email || !senha) {
         return alert("Por favor, preencha o email e a senha.");
     }
-    
+
     const response = await fetch("http://localhost:3000/login", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha })
     });
-    
+
     if (!response.ok) {
         return alert("Erro ao fazer login!");
     }
-    
+
     const data = await response.json();
 
     alert(`Login efetuado com sucesso! Bem-vindo ${data.nome}`);
@@ -81,24 +81,58 @@ async function cadastro() {
     const telefone = document.getElementById("telefone-cadastro").value;
     const endereco = document.getElementById("endereco-cadastro").value;
     const senha = document.getElementById("senha-cadastro").value;
-    
+
     if (nome == "" || endereco == "" || telefone == "" || email == "" || senha == "") {
         return alert("Preencha todos os campos")
     }
 
     const response = await fetch("http://localhost:3000/cliente", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nome, endereco, telefone, email, senha })
     })
-    
-    if (!response.ok){
+
+    if (!response.ok) {
         return alert("Erro ao cadastrar usuario!")
     } else {
         alert("Usuario cadastrado com sucesso!");
     }
 
     alternarPagina('index.html')
+}
+
+async function verificarConta() {
+    const response = await fetch("http://localhost:3000/conta");
+
+    const data = await response.json();
+
+    if (data.nome != "" && data.nome != null) {
+        const header = document.getElementById("container-cadastro-login")
+
+        document.getElementById("container-cadastro-login").style.display = "flex"
+        document.getElementById("container-cadastro-login").style.alignItems = "center"
+
+        header.innerHTML = ""
+        header.innerHTML =
+            `
+        <h3>${data.nome}</h3>
+        <button type="button" onclick="logout()" id="botao-logout">Logout</button>
+        <button type="button" onclick="alternarPagina('conta.html')">Conta</button>
+    `
+        document.getElementById("nome-conta").innerText = data.nome
+        document.getElementById("endereco-conta").innerText = data.endereco
+        document.getElementById("email-conta").innerText = data.email
+        document.getElementById("telefone-conta").innerText = data.telefone
+    }
+
+}
+
+async function logout() {
+    const response = await fetch("http://localhost:3000/logout", {
+        method: "DELETE"
+    });
+
+    window.relo
 }
 
 function alternarPagina(destino) {

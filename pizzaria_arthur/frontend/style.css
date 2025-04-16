@@ -37,6 +37,17 @@ nav li:hover {
     border-radius: 20px;
 }
 
+#container-cadastro-login button {
+    background-color: white;
+    color: #163e6b;
+    border: none;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 5%;
+    border-radius: 20px;
+    margin: 0 1vw;
+}
+
 nav a {
     color: white;
     text-decoration: none;
