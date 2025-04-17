@@ -26,7 +26,8 @@ db.run(`
         endereco TEXT NOT NULL,
         telefone TEXT NOT NULL UNIQUE,
         email TEXT NOT NULL UNIQUE,
-        senha TEXT NOT NULL
+        senha TEXT NOT NULL,
+        status BOOLEAN NOT NULL
     )
     `, (err) => {
         if (err) return console.log("Erro ao criar tabela clientes")
@@ -53,7 +54,7 @@ app.get("/cliente", (req, res) => {
 
 app.post("/cliente", (req, res) => {
     const { nome, endereco, telefone, email, senha } = req.body;
-    db.run(`INSERT INTO clientes (nome, endereco, telefone, email, senha) VALUES (?,?,?,?,?)`,
+    db.run(`INSERT INTO clientes (nome, endereco, telefone, email, senha, status) VALUES (?,?,?,?,?, 'true')`,
         [nome, endereco, telefone, email, senha],
         (err) => {
             if (err) return res.status(400).json({ error: err.message });
@@ -64,18 +65,18 @@ app.post("/cliente", (req, res) => {
 
 app.delete("/cliente/:id", (req, res) => {
     const id = req.params.id;
-    db.run(`DELETE FROM clientes WHERE id = ?`,
+    db.run(`UPDATE clientes SET status = 'false' WHERE id = ?`,
         [id],
         (err) => {
             if (err) return res.status(400).json({ error: err.message });
-            res.json("Usuario deletado com sucesso!");
+            res.json("Usuario desativado com sucesso!");
         }
     )
 })
 
 app.post("/login", (req,res) => {
     const { email, senha } = req.body
-    db.get("SELECT * FROM clientes WHERE email = ? AND senha = ?",
+    db.get("SELECT * FROM clientes WHERE email = ? AND senha = ? AND status <> 'false'",
         [email, senha],
         (err, row) => {
             if (err) return res.status(400).json({ error: err.message });
@@ -88,7 +89,7 @@ app.post("/login", (req,res) => {
 })
 
 app.delete("/logout", (req, res) => {
-    fs.writeFile(CONTA, JSON.stringify(null, null, 2), err => {
+    fs.writeFile(CONTA, JSON.stringify("", null, 2), err => {
         if (err) return res.status(400).json({ error: err.message });
         res.json("Logout bem sucedido!")
     })

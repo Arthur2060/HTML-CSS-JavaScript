@@ -102,6 +102,28 @@ async function cadastro() {
 }
 
 async function verificarConta() {
+    
+    const conta = document.getElementById("conta")
+    const response = await fetch("http://localhost:3000/conta");
+
+    const data = await response.json();
+
+    if (data.nome != "" && data.nome != null) {
+        conta.innerHTML = ""
+        conta.innerHTML = 
+        `
+        <h2>${data.nome}</h2>
+        <h2>${data.email}</h2>
+        <h2>${data.telefone}</h2>
+        <h2>${data.endereco}</h2>
+        <h2 id="senha-conta">***********</h2>
+        <button type="button" onclick="alternarPagina('index.html')">Retornar a página inicial</button>
+        <button type="button" onclick="deletarConta()"><strong>DELETAR MINHA CONTA</strong></button>
+        `
+    }
+}
+
+async function verificarContaHome() {
     const response = await fetch("http://localhost:3000/conta");
 
     const data = await response.json();
@@ -114,15 +136,11 @@ async function verificarConta() {
 
         header.innerHTML = ""
         header.innerHTML =
-            `
+        `
         <h3>${data.nome}</h3>
         <button type="button" onclick="logout()" id="botao-logout">Logout</button>
         <button type="button" onclick="alternarPagina('conta.html')">Conta</button>
-    `
-        document.getElementById("nome-conta").innerText = data.nome
-        document.getElementById("endereco-conta").innerText = data.endereco
-        document.getElementById("email-conta").innerText = data.email
-        document.getElementById("telefone-conta").innerText = data.telefone
+        `
     }
 
 }
@@ -132,7 +150,25 @@ async function logout() {
         method: "DELETE"
     });
 
-    window.relo
+    location.reload()
+}
+
+async function deletarConta() {
+    if (!window.confirm("Você tem certeza que quer deletar está conta?")) {
+        return
+    }
+
+    const response = await fetch(`http://localhost:3000/cliente/${verificarConta().id}`, {
+        method: "DELETE"
+    });
+
+    if (!response.ok) {
+        return alert("Erro ao deletar conta!");
+    }
+
+    alert("Conta desativada com sucesso!");
+    logout()
+    alternarPagina('index.html')
 }
 
 function alternarPagina(destino) {
