@@ -65,6 +65,10 @@ async function login() {
 
     const data = await response.json();
 
+    if (data == null) {
+        alert("Usuario não encontrado!")
+    }
+
     alert(`Login efetuado com sucesso! Bem-vindo ${data.nome}`);
 
     if (data.email == "Pizzaria@gmail.com") {

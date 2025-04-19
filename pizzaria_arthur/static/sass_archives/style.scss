@@ -8,6 +8,7 @@ $paleta-extra: #FFCF9D;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -22,6 +23,20 @@ header {
     justify-content: space-around;
     align-items: center;
     background-color: $paleta-secoes;
+    color: $paleta-background;
+    button {
+        color: $paleta-background;
+        background-color: transparent;
+        border: solid 2px $paleta-background;
+        border-radius: 10px;
+        padding: 5%;
+        margin: 0 1vw;
+        transition: ease 0.2s;
+        &:hover {
+            background-color: $paleta-background;
+            color: $paleta-secoes;
+        }
+    }
 }
 
 nav ul{
