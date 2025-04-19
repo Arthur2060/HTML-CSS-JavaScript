@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F5DC;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #004225;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+nav ul li {
+  transition: ease 0.5s background-color;
+}
+nav ul li:hover {
+  background-color: #002c19;
+}
+nav ul a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F5F5DC;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 5vh 1vw;
+}
+
+#secao-inicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20%;
+  background-color: #FFCF9D;
+  color: #004225;
+  height: 70vh;
+  width: 100%;
+}
+
+#secao-cardapio {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #004225;
+  padding: 0 10%;
+}
+#secao-cardapio ul {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+#secao-cardapio ul li {
+  display: flex;
+  text-align: left;
+  color: #FFCF9D;
+  padding: 1%;
+}
+#secao-cardapio ul li img {
+  max-height: 30vh;
+  border-radius: 20px;
+  transition: ease 0.5s filter;
+  filter: grayscale(100%);
+}
+#secao-cardapio ul li img:hover {
+  filter: grayscale(0);
+}
+
+/*# sourceMappingURL=style.css.map */

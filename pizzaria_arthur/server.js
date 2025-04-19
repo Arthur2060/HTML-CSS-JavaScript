@@ -2,11 +2,12 @@ const express = require("express");
 const cors = require("cors");
 const sqlite = require("sqlite3").verbose();
 const fs = require("fs");
+const sass = require("sass");
 
 const app = express();
 
 app.use(cors());
-app.use(express.static("./frontend"));
+app.use(express.static("./static"));
 app.use(express.json());
 
 const db = new sqlite.Database("./database.db", (err) => {

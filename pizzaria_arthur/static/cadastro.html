@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_archives/style_cadastro_login.css">
+    <title>Cadastro pizzaria</title>
+</head>
+<body>
+    <form id="formulario-cadastro">
+        <button type="button" onclick="alternarPagina('index.html')" style="border-radius: 20px;">Voltar</button>
+        <h2><strong>Cadastro</strong></h2>
+        <div class="campo">
+            <label for="nome-cadastro">Nome</label>
+            <input type="text" id="nome-cadastro" required>
+        </div>
+        <div class="campo">
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco-cadastro" required>
+        </div>
+        <div class="campo">
+            <label for="telefone-cadastro">Telefone</label>
+            <input type="tel" id="telefone-cadastro" required>
+        </div>
+        <div class="campo">
+            <label for="email-cadastro">E-mail</label>
+            <input type="email" id="email-cadastro" required>
+        </div>
+        <div class="campo">
+            <label for="senha-cadastro">Senha</label>
+            <input type="password" id="senha-cadastro" minlength="6" required>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" onclick="cadastro()">Cadastrar</button>
+            <button type="button" onclick="alternarPagina('login.html')">Já tem uma conta? <strong>faça login</strong></button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
