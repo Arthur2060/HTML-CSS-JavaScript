@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css_archives/style.css">
+    <link rel="stylesheet" href="sass_archives/style.css">
     <title>Conta Administradora</title>
 </head>
+
 <body onload="atualizarCardapio()" id="admin-page">
     <header>
         <div id="container-logo">
@@ -43,12 +45,15 @@
                 <button type="button" onclick="cadastrarPizza()">Adicionar</button>
             </form>
         </section>
+        <section>
+            <canvas id="display"></canvas>
+        </section>
     </main>
     <footer id="secao-cardapio">
         <div id="container-cardapio">
             <ul id="cardapio"></ul>
         </div>
     </footer>
-    <script src="script.js"></script>
 </body>
+
 </html>

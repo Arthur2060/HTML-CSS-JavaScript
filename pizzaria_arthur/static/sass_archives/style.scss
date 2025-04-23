@@ -1,14 +1,17 @@
 $paleta-secoes: #004225;
+$paleta-secoes-before: #00663a;
 $paleta-secoes-hover: #002c19;
 $paleta-background: #F5F5DC;
 $paleta-itens: #F5F5DC;
 $paleta-extra: #FFCF9D;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins;
 }
 
 #conta-body {
@@ -139,10 +142,28 @@ $paleta-extra: #FFCF9D;
         justify-content: center;
 
         li {
-            transition: ease 0.5s background-color;
-
+            position: relative;
+            transition: ease 0.5s;
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: $paleta-secoes-before;
+                height: 0vh;
+                width: 100%;
+                transition: ease 1s height;
+                bottom: 0vh;
+            }
             &:hover {
                 background-color: $paleta-secoes-hover;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-color: $paleta-secoes-before;
+                    height: 1vh;
+                    width: 100%;
+                    transition: ease-in 0.1s height;
+                    bottom: 0vh;
+                }
             }
         }
         
