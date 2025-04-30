@@ -1,9 +1,0 @@
-{
-  "id": 1,
-  "nome": "Admin",
-  "endereco": "Pizzaria",
-  "telefone": "000000001",
-  "email": "pizzaria@gmail.com",
-  "senha": "SenhaSecreta",
-  "status": 1
-}
